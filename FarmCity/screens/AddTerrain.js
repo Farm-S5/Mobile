@@ -13,6 +13,7 @@ import {
 const AddTerrain = () => {
   const route = useRoute();
   const { userId } = route.params;
+  const idUser =userId;
   const [personne, setPersonne] = useState(null);
 
   const [longitude,setLongitude] = useState("");
@@ -94,7 +95,9 @@ const AddTerrain = () => {
         if (response.ok) {
             const responseData = await response.json();
             const idTerrain = responseData;
+            console.log(idTerrain);
             addTerrainPersonne(idTerrain);
+            navigation.replace("Home", { userId: userId });
         } else {
             console.warn('Server responded with an error:', response.status);
             try {

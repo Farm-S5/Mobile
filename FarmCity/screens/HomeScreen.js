@@ -135,13 +135,22 @@ const HomeScreen = () => {
         <Text style={styles.tableHeaderCell}>Description</Text>
       </View>
       {listeTerrainNonValider.map((item) => (
-        <View key={item.idTerrain} style={styles.tableRow}>
+        <TouchableOpacity
+          key={item.idTerrain}
+          style={styles.tableRow}
+          onPress={() => {
+            navigation.replace('Update', {
+              idUser: userId,
+              idTerrain: item.idTerrain,
+            });
+          }}
+        >
           <Text style={styles.tableCell}>{item.idTerrain}</Text>
           <Text style={styles.tableCell}>{item.longitude}</Text>
           <Text style={styles.tableCell}>{item.latitude}</Text>
           <Text style={styles.tableCell}>{item.nbParcelle}</Text>
           <Text style={styles.tableCell}>{item.descriptionTerrain}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
 
       <Text style={styles.title}>Terrain non validé</Text>
@@ -153,13 +162,22 @@ const HomeScreen = () => {
         <Text style={styles.tableHeaderCell}>Description</Text>
       </View>
       {lisetTerrainValider.map((item) => (
-        <View key={item.idTerrain} style={styles.tableRow}>
+        <TouchableOpacity
+          key={item.idTerrain}
+          style={styles.tableRow}
+          onPress={() => {
+            navigation.replace('Update', {
+              idUser: userId,
+              idTerrain: item.idTerrain,
+            });
+          }}
+        >
           <Text style={styles.tableCell}>{item.idTerrain}</Text>
           <Text style={styles.tableCell}>{item.longitude}</Text>
           <Text style={styles.tableCell}>{item.latitude}</Text>
           <Text style={styles.tableCell}>{item.nbParcelle}</Text>
           <Text style={styles.tableCell}>{item.descriptionTerrain}</Text>
-        </View>
+        </TouchableOpacity>
       ))}
     </View>
   );

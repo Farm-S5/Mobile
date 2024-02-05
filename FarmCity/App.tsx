@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import HomeScreen from './screens/HomeScreen';
 import { Header } from 'react-native/Libraries/NewAppScreen';
 import AddTerrain from './screens/AddTerrain';
+import UpdateTerrain from './screens/UpdateTerrain';
 
 
 const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ export default function App() {
         <Stack.Screen options={{headerShown:false}} name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Add" component={AddTerrain} />
+        <Stack.Screen name="Update" component={UpdateTerrain} />
       </Stack.Navigator>
     </NavigationContainer>
   );
